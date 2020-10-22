@@ -1,0 +1,23 @@
+<div class="container">
+	<table class="table table-hover">
+				<thread>
+						<tr>
+								<th>Brand</th>
+								<th>Customer Name</th>
+						</tr>
+				</thread>
+				<tbody>
+							<tr>
+									<td><%= @brand.name%></td>
+									<td><%= @brand.customer.name %></td>
+							</tr>
+				</tbody>
+			</table>
+    <%= link_to 'Edit', edit_brand_path(@brand), class: "btn btn-primary" %>
+    <%= link_to 'Delete', @brand, class: "btn btn-danger", onclick: "confirm()", method: :Delete%>
+</div>
+<script>
+	function confirm() {
+		alert("Are you sure?");
+	}
+</script>

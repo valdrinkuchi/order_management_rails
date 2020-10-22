@@ -1,0 +1,27 @@
+<div class="container">
+	<h4>Brand</h4>
+	<br>
+	<%= link_to 'New Producer', new_producer_path, class: "btn btn-primary" %>
+	<br>
+	<br>
+    <table class="table table-hover">
+			<thread>
+					<tr>
+							<th>Producer Name</th>
+							<th>Short Name</th>
+							<th>Address</th>
+							<th>Bonus</th>
+					</tr>
+			</thread>
+			<tbody>
+					<% @producers.each do |producer|%>
+						<tr>
+								<td><%= link_to producer.name, producer %></td>
+								<td><%= producer.short_name %></td>
+								<td><%= producer.address %></td>
+								<td><%= producer.bonus %></td>
+						</tr>
+					<%end%>
+			</tbody>
+    </table>
+</div>

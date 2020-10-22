@@ -1,0 +1,24 @@
+<div class="container">
+	<table class="table table-hover">
+				<thread>
+						<tr>
+							<th>Number</th>
+							<th>Customer</th>
+							<th>Due Date</th>
+							<th>Price</th>
+							<th>In Production?</th>
+						</tr>
+				</thread>
+				<tbody>
+							<tr>
+								<td><%= @order.number%></td>
+								<td><%= @order.customer.name %></td>
+								<td><%= @order.due %></td>
+								<td><%= @order.price %></td>
+								<td><%= @order.in_production %></td>
+							</tr>
+				</tbody>
+			</table>
+    <%= link_to 'Edit', edit_order_path(@order), class: "btn btn-primary" %>
+    <%= link_to 'Delete', @order, class: "btn btn-danger", onclick: "confirm()", method: :Delete%>
+</div>

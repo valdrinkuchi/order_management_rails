@@ -1,0 +1,37 @@
+<div class="container">
+	<%= form_with model: @customer do |f| %>
+		<div class="form-group">
+			<%= f.label :number, "Number:", class: "col-md-4 control-label" %>
+			<div class="col-md-8">
+				<%= f.number_field :number, min: 0,  class: "form-control" %>
+			</div>
+		</div>
+		<div class="form-group">
+			<%= f.label :name, "Name:", class: "col-md-4 control-label" %>
+			<div class="col-md-8">
+				<%= f.text_field :name, class: "form-control" %>
+			</div>
+		</div>
+		<div class="form-group">
+			<%= f.label :short_name, "Short Name:", class: "col-md-4 control-label" %>
+			<div class="col-md-8">
+				<%= f.text_field :short_name, class: "form-control" %>
+			</div>
+		</div>
+		<div class="form-group">
+			<%= f.label :address, "Address:", class: "col-md-4 control-label" %>
+			<div class="col-md-8">
+				<%= f.text_field :address, class: "form-control" %>
+			</div>
+		</div>
+		<div class="form-group">
+			<%= f.label :delivery_address, "Delivery Address:", class: "col-md-4 control-label" %>
+			<div class="col-md-8">
+				<%= f.text_field :delivery_address, class: "form-control" %>
+			</div>
+		</div>
+		<div class="form-group">
+			<%= f.button :save,class: "btn btn-default btn-primary" %>
+		</div>
+	<% end %>
+</div>

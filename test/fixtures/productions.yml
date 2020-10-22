@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  order: one
+  producer: one
+  load_count: 1
+  price: 1.5
+  load_date: 2020-10-11
+  bonus: 1.5
+
+two:
+  order: two
+  producer: two
+  load_count: 1
+  price: 1.5
+  load_date: 2020-10-11
+  bonus: 1.5

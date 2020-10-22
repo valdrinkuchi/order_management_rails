@@ -1,0 +1,33 @@
+<div class="container">
+	<table class="table table-hover">
+				<thread>
+						<tr>
+							<th>Order</th>
+							<th>Customer</th>
+							<th>Producer</th>
+							<th>Load Count</th>
+							<th>Load Date</th>
+							<th>Price</th>
+							<th>Bonus</th>
+						</tr>
+				</thread>
+				<tbody>
+							<tr>
+								<td><%= @production.order.number %></td>
+								<td><%= @production.order.customer.short_name %></td>
+								<td><%= @production.producer.name %></td>
+								<td><%= @production.load_count %></td>
+								<td><%= @production.load_date %></td>
+								<td><%= @production.price %></td>
+								<td><%= @production.producer.bonus %></td>
+							</tr>
+				</tbody>
+			</table>
+    <%= link_to 'Edit', edit_production_path(@production), class: "btn btn-primary" %>
+    <%= link_to 'Delete', @production, class: "btn btn-danger", onclick: "confirm()", method: :Delete%>
+</div>
+<script>
+	function confirm() {
+		alert("Are you sure?");
+	}
+</script>

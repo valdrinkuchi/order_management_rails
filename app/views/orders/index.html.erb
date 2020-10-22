@@ -1,0 +1,29 @@
+<div class="container">
+	<h4>Order</h4>
+	<br>
+	<%= link_to 'New Order', new_order_path, class: "btn btn-primary" %>
+	<br>
+	<br>
+    <table class="table table-hover">
+			<thread>
+					<tr>
+							<th>Number</th>
+							<th>Customer</th>
+							<th>Due Date</th>
+							<th>Price</th>
+							<th>In Production?</th>
+					</tr>
+			</thread>
+			<tbody>
+					<% @orders.each do |order|%>
+						<tr>
+								<td><%= link_to order.number, order %></td>
+								<td><%= order.customer.name %></td>
+								<td><%= order.due %></td>
+								<td><%= order.price %></td>
+								<td><%= order.in_production %></td>
+						</tr>
+					<%end%>
+			</tbody>
+    </table>
+</div>

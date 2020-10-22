@@ -1,0 +1,23 @@
+<div class="container">
+	<h4>Brand</h4>
+	<br>
+	<%= link_to 'New Brand', new_brand_path, class: "btn btn-primary" %>
+	<br>
+	<br>
+    <table class="table table-hover">
+			<thread>
+					<tr>
+							<th>Brand Name</th>
+							<th>Customer</th>
+					</tr>
+			</thread>
+			<tbody>
+					<% @brands.each do |brand|%>
+						<tr>
+								<td><%= link_to brand.name, brand %></td>
+								<td><%= brand.customer.name %></td>
+						</tr>
+					<%end%>
+			</tbody>
+    </table>
+</div>

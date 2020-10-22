@@ -1,0 +1,20 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+      {
+          "name": "Debug Rails server",
+          "type": "Ruby",
+          "request": "launch",
+          "cwd": "${workspaceRoot}",
+          "useBundler": true,
+          "pathToBundler": "/home/valdrin/.rbenv/shims/bundle",
+          "pathToRDebugIDE": "/home/valdrin/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/ruby-debug-ide-0.7.2",
+          "program": "${workspaceRoot}/bin/rails",
+          "args": [
+              "server",
+              "-p",
+              "3000"
+          ]
+      },
+  ]
+}

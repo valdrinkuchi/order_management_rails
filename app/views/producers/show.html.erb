@@ -1,0 +1,27 @@
+<div class="container">
+	<table class="table table-hover">
+				<thread>
+						<tr>
+							<th>Producer Name</th>
+							<th>Short Name</th>
+							<th>Address</th>
+							<th>Bonus</th>
+						</tr>
+				</thread>
+				<tbody>
+							<tr>
+								<td><%= @producer.name %></td>
+								<td><%= @producer.short_name %></td>
+								<td><%= @producer.address %></td>
+								<td><%= @producer.bonus %></td>
+							</tr>
+				</tbody>
+			</table>
+    <%= link_to 'Edit', edit_producer_path(@producer), class: "btn btn-primary" %>
+    <%= link_to 'Delete', @producer, class: "btn btn-danger", onclick: "confirm()", method: :Delete%>
+</div>
+<script>
+	function confirm() {
+		alert("Are you sure?");
+	}
+</script>

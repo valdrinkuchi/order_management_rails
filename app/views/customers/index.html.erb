@@ -1,0 +1,23 @@
+<div class="container">
+	<h4>Customers</h4>
+	<br>
+	<%= link_to 'New Customer', new_customer_path, class: "btn btn-primary" %>
+	<br>
+	<br>
+    <table class="table table-hover">
+			<thread>
+					<tr>
+							<th>Customer Name</th>
+							<th>Address</th>
+					</tr>
+			</thread>
+			<tbody>
+					<% @customers.each do |customer|%>
+						<tr>
+								<td><%= link_to customer.name, customer %></td>
+								<td><%= customer.address %></td>
+						</tr>
+					<%end%>
+			</tbody>
+    </table>
+</div>
