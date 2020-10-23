@@ -1,6 +1,5 @@
 class Order < ApplicationRecord
   belongs_to :customer
-  has_one :brand
   has_one :production, dependent: :destroy
   has_one :calculation, through: :production
   validates :number, uniqueness: true, presence: true

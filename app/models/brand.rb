@@ -1,4 +1,4 @@
 class Brand < ApplicationRecord
-  belongs_to :customer, dependent: :destroy 
-  validates :name, presence: true
+  belongs_to :customer
+  validates :name, presence: true, uniqueness: true
 end

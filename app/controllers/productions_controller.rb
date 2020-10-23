@@ -36,15 +36,9 @@ class ProductionsController < ApplicationController
 
   def destroy
     @production = Production.find_by_id(params[:id])
-    @calculation = Calculation.find_by_production_id(params[:id])
-    @calculation.delete
-    if @calculation.delete
-      @production.delete
-      if @production.delete
-        redirect_to productions_path, notice: 'Production deleted successfully.'
-      else
-        render 'edit'
-      end
+    @production.destroy
+    if @production.destroy
+      redirect_to productions_path, notice: 'Production deleted successfully.'
     else
       render 'edit'
     end

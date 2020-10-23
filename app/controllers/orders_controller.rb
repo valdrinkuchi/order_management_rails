@@ -36,8 +36,8 @@ class OrdersController < ApplicationController
 
   def destroy
     @order = Order.find_by_id(params[:id])
-    @order.delete
-    if @order.delete
+    @order.destroy
+    if @order.destroy
       redirect_to orders_path, notice: 'Order deleted successfully.'
     else
       render 'edit'
