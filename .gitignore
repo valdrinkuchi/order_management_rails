@@ -41,6 +41,6 @@ yarn-debug.log*
 .yarn-integrity
 
 #ignore vscode debuger settings
-/vscode
+/.vscode
 #ignoring ruby path 
 /path
