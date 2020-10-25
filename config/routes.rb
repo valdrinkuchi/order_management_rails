@@ -6,5 +6,4 @@ Rails.application.routes.draw do
   resources :producers
   resources :orders
   resources :productions
-  get '/charts', to: 'charts#index'
 end
