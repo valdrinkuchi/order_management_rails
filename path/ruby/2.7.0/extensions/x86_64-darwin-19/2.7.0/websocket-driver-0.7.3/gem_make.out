@@ -1,0 +1,15 @@
+current directory: /Users/valdrinkuchi/Desktop/orm_rails/path/ruby/2.7.0/gems/websocket-driver-0.7.3/ext/websocket-driver
+/Users/valdrinkuchi/.rbenv/versions/2.7.1/bin/ruby -I /Users/valdrinkuchi/.rbenv/versions/2.7.1/lib/ruby/2.7.0 -r ./siteconf20201024-60609-umkd4b.rb extconf.rb
+creating Makefile
+
+current directory: /Users/valdrinkuchi/Desktop/orm_rails/path/ruby/2.7.0/gems/websocket-driver-0.7.3/ext/websocket-driver
+make "DESTDIR=" clean
+
+current directory: /Users/valdrinkuchi/Desktop/orm_rails/path/ruby/2.7.0/gems/websocket-driver-0.7.3/ext/websocket-driver
+make "DESTDIR="
+compiling websocket_mask.c
+linking shared-object websocket_mask.bundle
+
+current directory: /Users/valdrinkuchi/Desktop/orm_rails/path/ruby/2.7.0/gems/websocket-driver-0.7.3/ext/websocket-driver
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 websocket_mask.bundle ./.gem.20201024-60609-ikdfn2

@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
-  root to:'main#index'
+  root to: 'main#index'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :customers
   resources :brands
   resources :producers
   resources :orders
   resources :productions
+  get '/charts', to: 'charts#index'
 end
