@@ -9,6 +9,6 @@ class Order < ApplicationRecord
   private
 
   def order_validation
-    errors.add(:order, message: 'Due date cannot be same or earlier as Signed date') if due <= signed
+    errors.add(:order, message: 'Due date cannot be same or earlier as Signed date') if due.present? && signed.present? && due <= signed
   end
 end

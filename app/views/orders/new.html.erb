@@ -1,29 +1,39 @@
+<% if @order&.errors&.any? %>
+		<div id="error_explanation">
+			<ul>
+				<% @order.errors.full_messages.each do |message| %>
+					<li><%= message %></li>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>
 <%= render 'form', order: @order%>
+
 <script>
-jQuery(function( $ ){
-  $("#order_brand_id").children().each(function() {
-      let option = $(this);
-        option.css('display', 'none');
-  });
-	if ($("#order_customer_id").val() != '' ){
-		$("#order_brand_id").prop('disabled', true);
-	}
-	
-  $("#order_customer_id").on('change',function() {
-		$("#order_brand_id").prop('disabled', false);
-		$("#order_brand_id").val("");
-		const client = $(this).val();
-		console.log(client);
+  jQuery(function( $ ){
     $("#order_brand_id").children().each(function() {
-      $(this).css('display', '');
+        let option = $(this);
+            option.css('display', 'none');
     });
-    
-    $("#order_brand_id").children().each(function() {
-      let option = $(this);
-      if (option.val() != client) {
-        option.css('display', 'none');
-      }
+        if ($("#order_customer_id").val() != '' ){
+            $("#order_brand_id").prop('disabled', true);
+        }
+        
+    $("#order_customer_id").on('change',function() {
+            $("#order_brand_id").prop('disabled', false);
+            $("#order_brand_id").val("");
+            const client = $(this).val();
+            console.log(client);
+        $("#order_brand_id").children().each(function() {
+        $(this).css('display', '');
+        });
+        
+        $("#order_brand_id").children().each(function() {
+        let option = $(this);
+        if (option.val() != client) {
+            option.css('display', 'none');
+        }
+        });
     });
-  });
-});
+    });
 </script>

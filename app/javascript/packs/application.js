@@ -9,8 +9,10 @@ require("@rails/activestorage").start()
 require("channels")
 require("chart.js")
 
+
 import "bootstrap"
 import "../stylesheets/application"
+import "./order_form"
 
 document.addEventListener("turbolinks:load", () => {
   $('[data-toggle="tooltip"]').tooltip()
