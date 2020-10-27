@@ -17,16 +17,16 @@ class ProducersController < ApplicationController
   end
 
   def show
-    @producer = Producer.find_by_id(params[:id])
+    @producer = Producer.find(params[:id])
     redirect_to '/' unless @producer
   end
 
   def edit
-    @producer = Producer.find_by_id(params[:id])
+    @producer = Producer.find(params[:id])
   end
 
   def update
-    @producer = Producer.find_by_id(params[:id])
+    @producer = Producer.find(params[:id])
     if @producer.update(producer_params)
       redirect_to producers_path, notice: 'Producer updated successfully.'
     else
@@ -35,7 +35,7 @@ class ProducersController < ApplicationController
   end
 
   def destroy
-    @producer = Producer.find_by_id(params[:id])
+    @producer = Producer.find(params[:id])
     @producer.destroy
     if @producer.destroy
       redirect_to producers_path, notice: 'Producer deleted successfully.'

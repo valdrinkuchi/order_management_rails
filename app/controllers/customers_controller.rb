@@ -17,16 +17,16 @@ class CustomersController < ApplicationController
   end
 
   def show
-    @customer = Customer.find_by_id(params[:id])
+    @customer = Customer.find(params[:id])
     redirect_to '/' unless @customer
   end
 
   def edit
-    @customer = Customer.find_by_id(params[:id])
+    @customer = Customer.find(params[:id])
   end
 
   def update
-    @customer = Customer.find_by_id(params[:id])
+    @customer = Customer.find(params[:id])
     if @customer.update(customer_params)
       redirect_to customers_path, notice: 'Customer updated successfully.'
     else
@@ -35,7 +35,7 @@ class CustomersController < ApplicationController
   end
 
   def destroy
-    @customer = Customer.find_by_id(params[:id])
+    @customer = Customer.find(params[:id])
     @customer.destroy
     if @customer.destroy
       redirect_to customers_path, notice: 'Customer deleted successfully.'

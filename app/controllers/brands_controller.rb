@@ -21,16 +21,16 @@ class BrandsController < ApplicationController
   end
 
   def show
-    @brand = Brand.find_by_id(params[:id])
+    @brand = Brand.find(params[:id])
     redirect_to '/' unless @brand
   end
 
   def edit
-    @brand = Brand.find_by_id(params[:id])
+    @brand = Brand.find(params[:id])
   end
 
   def update
-    @brand = Brand.find_by_id(params[:id])
+    @brand = Brand.find(params[:id])
     if @brand.update(brand_params)
       redirect_to brands_path, notice: 'Brand updated successfully.'
     else
@@ -39,7 +39,7 @@ class BrandsController < ApplicationController
   end
 
   def destroy
-    @brand = Brand.find_by_id(params[:id])
+    @brand = Brand.find(params[:id])
     @brand.destroy
     if @brand.destroy
       redirect_to brands_path, notice: 'Brand deleted successfully.'

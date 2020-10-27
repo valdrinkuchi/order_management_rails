@@ -17,16 +17,16 @@ class OrdersController < ApplicationController
   end
 
   def show
-    @order = Order.find_by_id(params[:id])
+    @order = Order.find(params[:id])
     redirect_to '/' unless @order
   end
 
   def edit
-    @order = Order.find_by_id(params[:id])
+    @order = Order.find(params[:id])
   end
 
   def update
-    @order = Order.find_by_id(params[:id])
+    @order = Order.find(params[:id])
     if @order.update(order_params)
       redirect_to orders_path, notice: 'Order updated successfully.'
     else
@@ -35,7 +35,7 @@ class OrdersController < ApplicationController
   end
 
   def destroy
-    @order = Order.find_by_id(params[:id])
+    @order = Order.find(params[:id])
     @order.destroy
     if @order.destroy
       redirect_to orders_path, notice: 'Order deleted successfully.'
