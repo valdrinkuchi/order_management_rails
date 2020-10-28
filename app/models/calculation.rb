@@ -2,8 +2,8 @@
 class Calculation
   include Mongoid::Document
   belongs_to :production
-  belongs_to :customer
-  belongs_to :order
+  # belongs_to :customer
+  # belongs_to :order
   before_save :create_calculation
   field :sale_neto, type: Float
   field :sale_vat, type: Float

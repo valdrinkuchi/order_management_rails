@@ -1,7 +1,7 @@
 class Producer
   include Mongoid::Document
   has_many :productions, dependent: :destroy
-  has_many :calculations
+  # has_many :calculations
   validates :name, :short_name, uniqueness: true
 
   field :number, type: Integer
