@@ -4,7 +4,7 @@ class Order
   belongs_to :brand
   validates :number, uniqueness: true, presence: true
   validates :price, :due, presence: true
-  validate :order_validation
+  # validate :order_validation
 
   field :number, type: Integer
   field :price, type: Float
