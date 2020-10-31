@@ -1,10 +1,6 @@
-# Calculation object contains ...
+
 class Calculation
   include Mongoid::Document
-  belongs_to :production
-  # belongs_to :customer
-  # belongs_to :order
-  before_save :create_calculation
   field :sale_neto, type: Float
   field :sale_vat, type: Float
   field :sale_gross, type: Float
@@ -16,6 +12,9 @@ class Calculation
   field :amount_difference, type: Integer
   filed :description, type: String
   VAT = 0.16
+
+  belongs_to :production
+  before_save :create_calculation
 
   def create_calculation
     self.sale_neto = sale_neto

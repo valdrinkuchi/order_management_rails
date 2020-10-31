@@ -1,17 +1,18 @@
 class Order
   include Mongoid::Document
-  belongs_to :customer
-  belongs_to :brand
-  validates :number, uniqueness: true, presence: true
-  validates :price, :due, presence: true
-  # validate :order_validation
-
   field :number, type: Integer
   field :price, type: Float
   field :signed, type: Date
   field :due, type: Date
   field :count, type: Integer
   field :in_production, type: Boolean, default: false
+
+  validates :number, uniqueness: true, presence: true
+  validates :price, :due, presence: true
+  validates :order_validation
+
+  belongs_to :customer
+  belongs_to :brand
 
   private
 

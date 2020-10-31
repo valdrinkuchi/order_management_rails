@@ -1,7 +1,8 @@
 class Brand
   include Mongoid::Document
-  belongs_to :customer
-  has_many :orders
-  validates :name, presence: true, uniqueness: true
   field :name, type: String
+
+  belongs_to :customer
+  has_many :orders, dependent: :destroy
+  validates :name, presence: true, uniqueness: true
 end

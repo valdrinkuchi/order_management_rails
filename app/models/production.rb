@@ -1,17 +1,16 @@
 class Production
   include Mongoid::Document
+  field :load_count, type: Integer
+  field :load_date, type: Date
+  field :price, type: Float
+  field :bonus, type: Float
+
   belongs_to :order
   belongs_to :producer
   has_one :calculation, dependent: :destroy
   validate :production_validate
   before_save :assign_production
   after_save :save_calculation
-
-  field :load_count, type: Integer
-  field :load_date, type: Date
-  field :price, type: Float
-  field :bonus, type: Float
-
   def save_calculation
     return if load_count.nil? || load_date.nil?
 
