@@ -18,29 +18,48 @@
       </button>
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Navigate
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <%= link_to "Orders", orders_path, {class: "dropdown-item"}%>
-              <%= link_to "Producers", producers_path, {class: "dropdown-item"}%>
-              <%= link_to "Customers", customers_path, {class: "dropdown-item"}%>
-              <%= link_to "Brands", brands_path, {class: "dropdown-item"}%>
-              <div class="dropdown-divider"></div>
-              <%= link_to "Productions", productions_path, {class: "dropdown-item"}%>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Reports</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Accounting</a>
-            </div>
-          </li>
-        </ul>
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Navigate
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <%= link_to "Orders", orders_path, {class: "dropdown-item"}%>
+                <%= link_to "Producers", producers_path, {class: "dropdown-item"}%>
+                <%= link_to "Customers", customers_path, {class: "dropdown-item"}%>
+                <%= link_to "Brands", brands_path, {class: "dropdown-item"}%>
+                <div class="dropdown-divider"></div>
+                <%= link_to "Productions", productions_path, {class: "dropdown-item"}%>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Reports</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Accounting</a>
+              </div>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+          <div class = "menuRight" style = "float:right; margin-right: 0;">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  User
+                </a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                  <% if current_user %>
+                  <%= link_to "Sign Out", destroy_user_session_path, method: :delete,class: "dropdown-item" %>
+                  <div class="dropdown-divider"></div>
+                  <% else %>
+                  <%= link_to "Sign Up", new_user_registration_path, {class: "dropdown-item"}%>
+                  <div class="dropdown-divider"></div>
+                  <%= link_to "Sing In", new_user_session_path, {class: "dropdown-item"}%>
+                  <% end %>
+                </div>
+              </li>
+            </ul>
+        </div>
       </div>
     </nav>
     <% flash.each do |type, msg| %>
@@ -48,6 +67,8 @@
         <%= msg %>
       </div>
     <% end %>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
     <%= yield %>
   </body>
 </html>
