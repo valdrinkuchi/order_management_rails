@@ -12,6 +12,7 @@ class Order
   before_save :order_validation
 
   belongs_to :brand
+  has_one :production, dependent: :destroy
 
   private
 

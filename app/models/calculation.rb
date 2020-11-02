@@ -1,6 +1,7 @@
 
 class Calculation
   include Mongoid::Document
+
   field :sale_neto, type: Float
   field :sale_vat, type: Float
   field :sale_gross, type: Float
@@ -10,7 +11,8 @@ class Calculation
   field :profit, type: Float
   field :days_late, type: Integer
   field :amount_difference, type: Integer
-  filed :description, type: String
+  field :description, type: String
+
   VAT = 0.16
 
   belongs_to :production

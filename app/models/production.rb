@@ -7,8 +7,8 @@ class Production
 
   belongs_to :order
   belongs_to :producer
-  has_one :calculation, dependent: :destroy
-  validate :production_validate
+  embeds_one :calculation
+  # validate :production_validate
   before_save :assign_production
   after_save :save_calculation
   def save_calculation

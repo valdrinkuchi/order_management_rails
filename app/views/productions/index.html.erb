@@ -19,7 +19,7 @@
 					<% @productions.each do |production|%>
 						<tr>
 								<td><%= link_to production.order.number, production %></td>
-								<td><%= production.order.customer.name %></td>
+								<td><%= production.order.brand.customer.name %></td>
 								<td><%= production.producer.name %></td>
 								<td><%= production.load_count %></td>
 								<td><%= production.load_date %></td>
