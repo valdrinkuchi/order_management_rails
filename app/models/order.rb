@@ -9,9 +9,8 @@ class Order
 
   validates :number, uniqueness: true, presence: true
   validates :price, :due, presence: true
-  validates :order_validation
+  before_save :order_validation
 
-  belongs_to :customer
   belongs_to :brand
 
   private

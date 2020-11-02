@@ -6,7 +6,6 @@ class Customer
   field :address, type: String
   field :delivery_address, type: String
 
-  has_many :orders, dependent: :destroy
   has_many :brands, dependent: :destroy
   validates :number, presence: true, uniqueness: true
   validates :name, :short_name, uniqueness: true
